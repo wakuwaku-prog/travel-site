@@ -21,6 +21,20 @@ ol.poilist{margin:0;padding-left:0;list-style:none}.poilist li{padding:7px 0;bor
 #mapwrap{height:52vh;border-radius:12px;overflow:hidden;position:sticky;top:8px}
 .panel{display:none}.panel.active{display:block}.note{font-size:12px;color:#8895a5;line-height:1.7}
 .sources a{font-size:12px;color:#0a6cff;text-decoration:none;display:inline-block;margin:1px 0}
+/* 地图编号点 + 地名标注 */
+.seqmarker{width:28px;height:28px;border-radius:50%;background:#0a6cff;color:#fff;font-size:13px;font-weight:700;text-align:center;line-height:28px;box-shadow:0 0 0 2px #fff,0 2px 6px rgba(0,0,0,.2)}
+.poilabel{font-size:12px;background:rgba(255,255,255,.92);border:1px solid #dbe3ee;border-radius:6px;padding:1px 6px;color:#1c2733;white-space:nowrap}
+/* 顺序导航底部栏 */
+#navbar{position:sticky;bottom:0;left:0;right:0;z-index:50;background:#fff;border-top:1px solid #e6edf5;padding:8px 12px;gap:8px;flex-direction:column;box-shadow:0 -3px 12px rgba(0,0,0,.06)}
+#navbar .navhead{font-weight:700;font-size:14px}
+#navbar .navtip{font-weight:400;color:#8895a5;font-size:11px}
+#navbar .chips{display:flex;gap:6px;flex-wrap:wrap}
+#navbar .chip{font-size:12px;padding:5px 9px;border-radius:999px;border:1px solid #dbe3ee;background:#f7f9fc;cursor:pointer}
+#navbar .chip.cur{background:#0a6cff;color:#fff;border-color:#0a6cff}
+#navbar .navctl{display:flex;gap:8px;align-items:center}
+#navbar .navctl button{font-size:13px;padding:6px 12px;border-radius:8px;border:1px solid #cfe0ff;background:#eef4ff;color:#0a6cff;cursor:pointer}
+/* 手机端：地图置顶吸顶，方便边看边点导航 */
+@media(max-width:900px){#mapwrap{order:-1;position:sticky;top:0;z-index:40;height:42vh}}
 </style></head><body>
 <header><h1>厦门 之旅 · 3天行程</h1>
 <div class='sub'>厦门 · 3天 · 出发上海 · 2人 · 自然风光/人文历史/美食/海岛度假</div></header>
@@ -496,7 +510,7 @@ ol.poilist{margin:0;padding-left:0;list-style:none}.poilist li{padding:7px 0;bor
 <li><a href='https://www.xiaohongshu.com/search_result/690afc6d0000000005039614?xsec_token=AB7AjPJj3tZDamn35GOz9Lp3N_ZcLmXn1z90yS7Mp8w-Q=&amp;xsec_source=' target='_blank'>去鼓浪屿导航避免走冤枉路一篇就够</a> <span style='color:#8895a5'>山顶小猫猫 ♥8197</span></li>
 <li><a href='https://www.xiaohongshu.com/search_result/6a868f03000000002702880d?xsec_token=ABB5wFWxegLz5Zukm32bqGd-dQnZbeGFPBvRDzwKMIp2U=&amp;xsec_source=' target='_blank'>鼓浪屿半日游｜超全攻略（省钱不废腿版）</a> <span style='color:#8895a5'>柿子红了 ♥154</span></li>
 <li><a href='https://www.xiaohongshu.com/search_result/6a846dda000000003300d56c?xsec_token=ABNPPLr6r2jdEeBeGFx8ZOZFus3kxBO5nJS3Q1du7RMWs=&amp;xsec_source=' target='_blank'>厦门鼓浪屿不花钱半日游</a> <span style='color:#8895a5'>elena ♥874</span></li></ol></div>
-      <div id='panel-import' class='panel'><h2>📦 把行程导入高德地图 / 旅行软件</h2><a class='nav' style='margin:4px 8px 4px 0' href='export/trip-xiamen.gpx' download>⬇️ trip-xiamen.gpx（123KB）</a><span style='color:#8895a5;font-size:12px'>GPX（两步路/六只脚/运动软件）</span><br><a class='nav' style='margin:4px 8px 4px 0' href='export/trip-xiamen.kml' download>⬇️ trip-xiamen.kml（59KB）</a><span style='color:#8895a5;font-size:12px'>KML（高德收藏导入 / Google 地球）</span><br><h3>高德 App 导入 KML（把路线图存进高德）</h3><ol class='poilist'><li>下载上面的 <b>.kml</b> 文件（手机浏览器下载）</li><li>打开高德地图 App → 我的 → 收藏 → 右上角「导入」→ 选择该 KML</li><li>导入后行程点与每日路线会出现在收藏/足迹里，可直接规划导航</li></ol><p style='color:#8895a5'>提示：坐标来自高德（GCJ-02），导入高德 App 无偏移；若导入 Google 地球等 WGS84 工具会有系统偏差，属正常。高德不支持把行程直接写入手写收藏，故用 KML 中转。</p><h3>每日整体路线（起点→终点）</h3><ol class='poilist'><li><b>Day1</b> 中山路步行街 → 十里长堤（集美）：<a href='https://uri.amap.com/navigation?from=118.081903,24.454104&to=118.089475,24.563722&mode=car&callnative=1' target='_blank'>打开/唤起高德路线</a> <img src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Furi.amap.com%2Fnavigation%3Ffrom%3D118.081903%2C24.454104%26to%3D118.089475%2C24.563722%26mode%3Dcar%26callnative%3D1' width='80' style='vertical-align:middle' alt='QR'/></li><li><b>Day2</b> 厦门园林植物园 → 黄厝海滩：<a href='https://uri.amap.com/navigation?from=118.109277,24.447728&to=118.228083,24.64782&mode=car&callnative=1' target='_blank'>打开/唤起高德路线</a> <img src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Furi.amap.com%2Fnavigation%3Ffrom%3D118.109277%2C24.447728%26to%3D118.228083%2C24.64782%26mode%3Dcar%26callnative%3D1' width='80' style='vertical-align:middle' alt='QR'/></li><li><b>Day3</b> 东渡邮轮码头 → 大德记沙滩+皓月园：<a href='https://uri.amap.com/navigation?from=118.077007,24.49397&to=118.075936,24.441099&mode=car&callnative=1' target='_blank'>打开/唤起高德路线</a> <img src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Furi.amap.com%2Fnavigation%3Ffrom%3D118.077007%2C24.49397%26to%3D118.075936%2C24.441099%26mode%3Dcar%26callnative%3D1' width='80' style='vertical-align:middle' alt='QR'/></li></ol></div>
+      <div id='panel-import' class='panel'><h2>📦 把行程导入高德地图 / 旅行软件</h2><h3>① 把路线图存进高德（KML 分日 / GPX 通用）</h3><div style='line-height:1.9'></div><div style='line-height:1.9'></div><p style='color:#c00;font-size:12px'><b>重要提醒：</b>高德 App 的『轨迹导入』把文件当<u>运动轨迹</u>解析，<b>只显示一条路线、不显示各景点名称</b>（你在截图中看到的就是这个）。要带地名+编号的线路图，请直接用本站『行程』页的地图（已给每个点加编号与名称，可点站导航）。KML 导入仅适合把整条路线存进『足迹』参考。</p><h3>② 逐段导航（每段一个高德入口）</h3><div class='card' style='padding:10px'><b>Day1 · 2026-09-18</b><ol class='poilist' style='font-size:13px'><li><b>1. 中山路步行街</b> → <b>2. 厦门八市（营平菜市场）</b> <a href='https://uri.amap.com/navigation?from=118.081903,24.454104,%E4%B8%AD%E5%B1%B1%E8%B7%AF%E6%AD%A5%E8%A1%8C%E8%A1%97&to=118.075017,24.457902,%E5%8E%A6%E9%97%A8%E5%85%AB%E5%B8%82%EF%BC%88%E8%90%A5%E5%B9%B3%E8%8F%9C%E5%B8%82%E5%9C%BA%EF%BC%89&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>2. 厦门八市（营平菜市场）</b> → <b>3. 老溪岸沙茶面</b> <a href='https://uri.amap.com/navigation?from=118.075017,24.457902,%E5%8E%A6%E9%97%A8%E5%85%AB%E5%B8%82%EF%BC%88%E8%90%A5%E5%B9%B3%E8%8F%9C%E5%B8%82%E5%9C%BA%EF%BC%89&to=118.088955,24.461247,%E8%80%81%E6%BA%AA%E5%B2%B8%E6%B2%99%E8%8C%B6%E9%9D%A2&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>3. 老溪岸沙茶面</b> → <b>4. 集美学村</b> <a href='https://uri.amap.com/navigation?from=118.088955,24.461247,%E8%80%81%E6%BA%AA%E5%B2%B8%E6%B2%99%E8%8C%B6%E9%9D%A2&to=118.103353,24.572373,%E9%9B%86%E7%BE%8E%E5%AD%A6%E6%9D%91&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>4. 集美学村</b> → <b>5. 十里长堤（集美）</b> <a href='https://uri.amap.com/navigation?from=118.103353,24.572373,%E9%9B%86%E7%BE%8E%E5%AD%A6%E6%9D%91&to=118.089475,24.563722,%E5%8D%81%E9%87%8C%E9%95%BF%E5%A0%A4%EF%BC%88%E9%9B%86%E7%BE%8E%EF%BC%89&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li></ol></div><div class='card' style='padding:10px'><b>Day2 · 2026-09-19</b><ol class='poilist' style='font-size:13px'><li><b>1. 厦门园林植物园</b> → <b>2. 南普陀寺</b> <a href='https://uri.amap.com/navigation?from=118.109277,24.447728,%E5%8E%A6%E9%97%A8%E5%9B%AD%E6%9E%97%E6%A4%8D%E7%89%A9%E5%9B%AD&to=118.095336,24.440836,%E5%8D%97%E6%99%AE%E9%99%80%E5%AF%BA&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>2. 南普陀寺</b> → <b>3. 顶澳仔猫街</b> <a href='https://uri.amap.com/navigation?from=118.095336,24.440836,%E5%8D%97%E6%99%AE%E9%99%80%E5%AF%BA&to=118.091662,24.440171,%E9%A1%B6%E6%BE%B3%E4%BB%94%E7%8C%AB%E8%A1%97&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>3. 顶澳仔猫街</b> → <b>4. 沙坡尾艺术西区</b> <a href='https://uri.amap.com/navigation?from=118.091662,24.440171,%E9%A1%B6%E6%BE%B3%E4%BB%94%E7%8C%AB%E8%A1%97&to=118.087587,24.437609,%E6%B2%99%E5%9D%A1%E5%B0%BE%E8%89%BA%E6%9C%AF%E8%A5%BF%E5%8C%BA&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>4. 沙坡尾艺术西区</b> → <b>5. 白城沙滩</b> <a href='https://uri.amap.com/navigation?from=118.087587,24.437609,%E6%B2%99%E5%9D%A1%E5%B0%BE%E8%89%BA%E6%9C%AF%E8%A5%BF%E5%8C%BA&to=118.100875,24.432281,%E7%99%BD%E5%9F%8E%E6%B2%99%E6%BB%A9&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>5. 白城沙滩</b> → <b>6. 演武大桥观景台</b> <a href='https://uri.amap.com/navigation?from=118.100875,24.432281,%E7%99%BD%E5%9F%8E%E6%B2%99%E6%BB%A9&to=118.087789,24.435421,%E6%BC%94%E6%AD%A6%E5%A4%A7%E6%A1%A5%E8%A7%82%E6%99%AF%E5%8F%B0&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>6. 演武大桥观景台</b> → <b>7. 环岛路（白城→黄厝）</b> <a href='https://uri.amap.com/navigation?from=118.087789,24.435421,%E6%BC%94%E6%AD%A6%E5%A4%A7%E6%A1%A5%E8%A7%82%E6%99%AF%E5%8F%B0&to=118.142325,24.431453,%E7%8E%AF%E5%B2%9B%E8%B7%AF%EF%BC%88%E7%99%BD%E5%9F%8E%E2%86%92%E9%BB%84%E5%8E%9D%EF%BC%89&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>7. 环岛路（白城→黄厝）</b> → <b>8. 黄厝海滩</b> <a href='https://uri.amap.com/navigation?from=118.142325,24.431453,%E7%8E%AF%E5%B2%9B%E8%B7%AF%EF%BC%88%E7%99%BD%E5%9F%8E%E2%86%92%E9%BB%84%E5%8E%9D%EF%BC%89&to=118.228083,24.64782,%E9%BB%84%E5%8E%9D%E6%B5%B7%E6%BB%A9&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li></ol></div><div class='card' style='padding:10px'><b>Day3 · 2026-09-20</b><ol class='poilist' style='font-size:13px'><li><b>1. 东渡邮轮码头</b> → <b>2. 日光岩</b> <a href='https://uri.amap.com/navigation?from=118.077007,24.49397,%E4%B8%9C%E6%B8%A1%E9%82%AE%E8%BD%AE%E7%A0%81%E5%A4%B4&to=118.067310,24.442228,%E6%97%A5%E5%85%89%E5%B2%A9&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>2. 日光岩</b> → <b>3. 菽庄花园+钢琴博物馆</b> <a href='https://uri.amap.com/navigation?from=118.067310,24.442228,%E6%97%A5%E5%85%89%E5%B2%A9&to=118.069520,24.439035,%E8%8F%BD%E5%BA%84%E8%8A%B1%E5%9B%AD%2B%E9%92%A2%E7%90%B4%E5%8D%9A%E7%89%A9%E9%A6%86&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>3. 菽庄花园+钢琴博物馆</b> → <b>4. 鼓浪屿（全岛）</b> <a href='https://uri.amap.com/navigation?from=118.069520,24.439035,%E8%8F%BD%E5%BA%84%E8%8A%B1%E5%9B%AD%2B%E9%92%A2%E7%90%B4%E5%8D%9A%E7%89%A9%E9%A6%86&to=118.066102,24.446214,%E9%BC%93%E6%B5%AA%E5%B1%BF%EF%BC%88%E5%85%A8%E5%B2%9B%EF%BC%89&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>4. 鼓浪屿（全岛）</b> → <b>5. 八卦楼（风琴博物馆）</b> <a href='https://uri.amap.com/navigation?from=118.066102,24.446214,%E9%BC%93%E6%B5%AA%E5%B1%BF%EF%BC%88%E5%85%A8%E5%B2%9B%EF%BC%89&to=118.068263,24.447422,%E5%85%AB%E5%8D%A6%E6%A5%BC%EF%BC%88%E9%A3%8E%E7%90%B4%E5%8D%9A%E7%89%A9%E9%A6%86%EF%BC%89&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li><li><b>5. 八卦楼（风琴博物馆）</b> → <b>6. 大德记沙滩+皓月园</b> <a href='https://uri.amap.com/navigation?from=118.068263,24.447422,%E5%85%AB%E5%8D%A6%E6%A5%BC%EF%BC%88%E9%A3%8E%E7%90%B4%E5%8D%9A%E7%89%A9%E9%A6%86%EF%BC%89&to=118.075936,24.441099,%E5%A4%A7%E5%BE%B7%E8%AE%B0%E6%B2%99%E6%BB%A9%2B%E7%9A%93%E6%9C%88%E5%9B%AD&mode=car&callnative=1' target='_blank'>🚗 高德导航</a></li></ol></div><h3>③ 每日整体路线（起点→终点，附二维码）</h3><ol class='poilist'><li><b>Day1</b> 中山路步行街 → 十里长堤（集美）：<a href='https://uri.amap.com/navigation?from=118.081903,24.454104&to=118.089475,24.563722&mode=car&callnative=1' target='_blank'>打开/唤起高德路线</a> <img src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Furi.amap.com%2Fnavigation%3Ffrom%3D118.081903%2C24.454104%26to%3D118.089475%2C24.563722%26mode%3Dcar%26callnative%3D1' width='80' style='vertical-align:middle' alt='QR'/></li><li><b>Day2</b> 厦门园林植物园 → 黄厝海滩：<a href='https://uri.amap.com/navigation?from=118.109277,24.447728&to=118.228083,24.64782&mode=car&callnative=1' target='_blank'>打开/唤起高德路线</a> <img src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Furi.amap.com%2Fnavigation%3Ffrom%3D118.109277%2C24.447728%26to%3D118.228083%2C24.64782%26mode%3Dcar%26callnative%3D1' width='80' style='vertical-align:middle' alt='QR'/></li><li><b>Day3</b> 东渡邮轮码头 → 大德记沙滩+皓月园：<a href='https://uri.amap.com/navigation?from=118.077007,24.49397&to=118.075936,24.441099&mode=car&callnative=1' target='_blank'>打开/唤起高德路线</a> <img src='https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=https%3A%2F%2Furi.amap.com%2Fnavigation%3Ffrom%3D118.077007%2C24.49397%26to%3D118.075936%2C24.441099%26mode%3Dcar%26callnative%3D1' width='80' style='vertical-align:middle' alt='QR'/></li></ol><p style='color:#8895a5;font-size:12px'>提示：坐标来自高德（GCJ-02）。高德不支持第三方直接写入收藏，故用 KML 中转/逐段导航；本站地图即最完整的带地名线路图。</p></div>
     </div>
     <div><div id='mapwrap'><div id='map'></div></div></div>
   </div>
@@ -504,35 +518,62 @@ ol.poilist{margin:0;padding-left:0;list-style:none}.poilist li{padding:7px 0;bor
 <script src='https://webapi.amap.com/maps?v=2.0&key=2525e1aeef193f334882762b43b3b7ba&plugin=AMap.Driving,AMap.Walking,AMap.Transfer'></script>
 <script>
 window.__DAYS__ = {"1": [{"id": "p02", "name": "中山路步行街", "lng": 118.081903, "lat": 24.454104}, {"id": "p11", "name": "厦门八市（营平菜市场）", "lng": 118.075017, "lat": 24.457902}, {"id": "r01", "name": "老溪岸沙茶面", "lng": 118.088955, "lat": 24.461247}, {"id": "p08", "name": "集美学村", "lng": 118.103353, "lat": 24.572373}, {"id": "p15", "name": "十里长堤（集美）", "lng": 118.089475, "lat": 24.563722}], "2": [{"id": "p04", "name": "厦门园林植物园", "lng": 118.109277, "lat": 24.447728}, {"id": "p05", "name": "南普陀寺", "lng": 118.095336, "lat": 24.440836}, {"id": "p14", "name": "顶澳仔猫街", "lng": 118.091662, "lat": 24.440171}, {"id": "p03", "name": "沙坡尾艺术西区", "lng": 118.087587, "lat": 24.437609}, {"id": "p06", "name": "白城沙滩", "lng": 118.100875, "lat": 24.432281}, {"id": "p13", "name": "演武大桥观景台", "lng": 118.087789, "lat": 24.435421}, {"id": "p07", "name": "环岛路（白城→黄厝）", "lng": 118.142325, "lat": 24.431453}, {"id": "p10", "name": "黄厝海滩", "lng": 118.228083, "lat": 24.64782}], "3": [{"id": "p21", "name": "东渡邮轮码头", "lng": 118.077007, "lat": 24.49397}, {"id": "p16", "name": "日光岩", "lng": "118.067310", "lat": "24.442228"}, {"id": "p17", "name": "菽庄花园+钢琴博物馆", "lng": "118.069520", "lat": "24.439035"}, {"id": "p01", "name": "鼓浪屿（全岛）", "lng": 118.066102, "lat": 24.446214}, {"id": "p18", "name": "八卦楼（风琴博物馆）", "lng": "118.068263", "lat": "24.447422"}, {"id": "p20", "name": "大德记沙滩+皓月园", "lng": "118.075936", "lat": "24.441099"}]};
+// 给每天的点编号
+(function(){ for(var d in window.__DAYS__){ var arr=window.__DAYS__[d]; arr.forEach(function(p,i){ p.seq=i+1; }); } })();
 var mp = new AMap.Map('map',{zoom:11,center:[118.09,24.47]});
-var routeLayers=[];
+var routeLayers=[], markerLayers=[], activeDay=1;
+function navUrl(p){ return 'https://uri.amap.com/navigation?to='+p.lng+','+p.lat+','+encodeURIComponent(p.name)+'&mode=car&callnative=1'; }
+function clearLayers(){ routeLayers.concat(markerLayers).forEach(function(l){l.setMap&&l.setMap(null)}); routeLayers=[]; markerLayers=[]; }
 function drawDay(d){
-  routeLayers.forEach(function(l){l.setMap&&l.setMap(null)});routeLayers=[];
+  clearLayers();
   var pts=(window.__DAYS__[d]||[]).filter(function(p){return p&&p.lat});
-  if(pts.length<2)return;
+  if(pts.length<2) return;
   var path=pts.map(function(p){return [p.lng,p.lat]});
-  var poly=new AMap.Polyline({path:path,strokeColor:'#0a6cff',strokeWeight:5,strokeOpacity:.85});
-  poly.setMap(mp);routeLayers.push(poly);
+  var poly=new AMap.Polyline({path:path,strokeColor:'#0a6cff',strokeWeight:6,strokeOpacity:.9,lineJoin:'round',borderWeight:2,strokeStyle:'solid'});
+  poly.setMap(mp); routeLayers.push(poly);
+  // 编号+地名标注
+  pts.forEach(function(p){
+    var m=new AMap.Marker({
+      position:[p.lng,p.lat], zIndex:120,
+      content:'<div class="seqmarker" data-name="'+p.name+'">'+p.seq+'</div>',
+      offset:new AMap.Pixel(-14,-14)
+    });
+    m.setMap(mp); markerLayers.push(m);
+    // 名称 label
+    var lb=new AMap.Text({position:[p.lng,p.lat],content:'<div class="poilabel">'+(p.seq+'. '+p.name)+'</div>',offset:new AMap.Pixel(0,12),zIndex:130});
+    lb.setMap(mp); markerLayers.push(lb);
+  });
   mp.setFitView([poly]);
+  renderNavbar(d, pts);
+}
+function renderNavbar(d, pts){
+  var bar=document.getElementById('navbar'); if(!bar) return;
+  var html='<div class="navhead">Day'+d+' 顺序导航 <span class="navtip">点站点直开高德</span></div>';
+  html+='<div class="chips">';
+  pts.forEach(function(p,i){ html+='<button class="chip" data-i="'+i+'">'+p.seq+'. '+p.name+'</button>'; });
+  html+='</div><div class="navctl"><button id="prevStop">⬅ 上一站</button><button id="nextStop">下一站 ➡</button></div>';
+  bar.innerHTML=html;
+  var chips=bar.querySelectorAll('.chip');
+  chips.forEach(function(c){ c.addEventListener('click',function(){ window.open(navUrl(pts[+c.dataset.i]),'_blank'); }); });
+  var cur=0;
+  function hi(i){ cur=i; chips.forEach(function(c,j){ c.classList.toggle('cur', j===i); }); }
+  hi(0);
+  bar.querySelector('#prevStop').addEventListener('click',function(){ if(cur>0) hi(cur-1); });
+  bar.querySelector('#nextStop').addEventListener('click',function(){ if(cur<pts.length-1){ hi(cur+1); } window.open(navUrl(pts[cur]),'_blank'); });
 }
 var dayCards=document.querySelectorAll('.daycard');
-var activeDay=1;
-dayCards.forEach(function(c){c.addEventListener('click',function(){activeDay=+c.dataset.day;drawDay(activeDay)});});
+dayCards.forEach(function(c){c.addEventListener('click',function(){activeDay=+c.dataset.day;drawDay(activeDay);});});
 drawDay(1);
-// checkbox 勾选 → 该 POI 路由加入/移除 并重绘
 var pois=document.querySelectorAll('.poi input[type=checkbox]');
-pois.forEach(function(cb){cb.addEventListener('change',function(){
-  var d=activeDay,p=null;
-  (window.__DAYS__[d]||[]).some(function(x){if(x.id===cb.dataset.id){p=x;return true}return false});
-  if(p)drawDay(d);
-  if(AMap){/*前端重算用 Driving.search;示例先重绘静态polyline*/}
-});});
-// tab 切换
+pois.forEach(function(cb){cb.addEventListener('change',function(){ drawDay(activeDay); });});
 var btns=document.querySelectorAll('.topbar .pill');
 btns.forEach(function(b){b.addEventListener('click',function(){
   btns.forEach(function(x){x.classList.remove('on')});b.classList.add('on');
   document.querySelectorAll('.panel').forEach(function(p){p.classList.remove('active')});
   document.getElementById('panel-'+b.dataset.panel).classList.add('active');
+  if(b.dataset.panel==='trip'){ var bar=document.getElementById('navbar'); if(bar) bar.style.display='flex'; }
+  else if(b.dataset.panel==='import'){ var nb=document.getElementById('navbar'); if(nb) nb.style.display='none'; }
 });});
 </script>
+<div id='navbar' style='display:flex'></div>
 </body></html>
