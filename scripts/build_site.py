@@ -110,6 +110,7 @@ ol.poilist{margin:0;padding-left:0;list-style:none}.poilist li{padding:7px 0;bor
     <button class='pill' data-panel='prep'>🎒 出发前准备</button>
     <button class='pill' data-panel='tips'>⚠️ 旅行提醒</button>
     <button class='pill' data-panel='srcs'>📚 资料来源</button>
+    <button class='pill' data-panel='import'>📦 导入路线</button>
   </div>
   <div class='grid'>
     <div>
@@ -122,6 +123,7 @@ ol.poilist{margin:0;padding-left:0;list-style:none}.poilist li{padding:7px 0;bor
       <div id='panel-prep' class='panel'><h2>🎒 出发前准备</h2><div class='note'>__PREP_PLACEHOLDER__</div></div>
       <div id='panel-tips' class='panel'><h2>⚠️ 旅行提醒</h2><div class='note'>__TIPS_PLACEHOLDER__</div></div>
       <div id='panel-srcs' class='panel'><h2>📚 资料来源（__SRC_COUNT__ 条）</h2>__SRC_PLACEHOLDER__</div>
+      <div id='panel-import' class='panel'><h2>📦 把行程导入高德地图 / 旅行软件</h2>__IMPORT_PLACEHOLDER__</div>
     </div>
     <div><div id='mapwrap'><div id='map'></div></div></div>
   </div>
@@ -166,6 +168,23 @@ btns.forEach(function(b){b.addEventListener('click',function(){
 
 def fill_demo(build=True):
     files = glob.glob(os.path.join(TRIP_DIR, "trip-*.json"))
+    if not files:
+        # 模板模式：无行程数据时输出说明页
+        os.makedirs(SITE_DIR, exist_ok=True)
+        html = HTML_TEMPLATE.replace("__AMAPKEY__", AMAP_JKEY) \
+            .replace("__TITLE__", "旅行规划模板") \
+            .replace("__SUBTITLE__", "还没有行程数据：请让 Agent 按 travel-research 流程生成 data/trips/trip-*.json 后重新运行本脚本") \
+            .replace("__DAYCARDS__", "<div class='card note'>没有可显示的行程。⌛ 使用方法见仓库 README：配置高德 Key → Agent 调研 → scripts/amap/route_fill.py → export_routes.py → 本脚本构建。</div>") \
+            .replace("__MAPDAYS__", "{}") \
+            .replace("__POIHTML__", "<div class='note'>—</div>") \
+            .replace("__FOOD_PLACEHOLDER__", "—").replace("__EXP_PLACEHOLDER__", "—") \
+            .replace("__PREP_PLACEHOLDER__", "—").replace("__TIPS_PLACEHOLDER__", "—") \
+            .replace("__SRC_PLACEHOLDER__", "—").replace("__SRC_COUNT__", "0") \
+            .replace("__IMPORT_PLACEHOLDER__", "—")
+        with open(os.path.join(SITE_DIR, "index.html"), "w", encoding="utf-8") as f:
+            f.write(html)
+        print("模板模式：无 trip 数据，已生成说明页")
+        return
     for f in files:
         trip = json.load(open(f, encoding="utf-8"))
         os.makedirs(SITE_DIR, exist_ok=True)
@@ -231,6 +250,32 @@ def fill_demo(build=True):
             return "\n".join(f"<li><a href='{esc(s.get('url',''))}' target='_blank'>{esc((s.get('title') or s.get('id'))[:46])}</a> <span style='color:#8895a5'>{esc(s.get('author',''))} {esc('♥'+str(s.get('likes'))) if s.get('likes') else ''}{esc(' · '+str(s.get('play'))) if s.get('play') else ''}</span></li>" for s in group)
         src_html = f"<h3>B站视频（{len(vids)}）</h3><ol class='poilist'>{src_rows(vids)}</ol><h3>小红书帖子（{len(posts)}）</h3><ol class='poilist'>{src_rows(posts)}</ol>"
         html = html.replace("__SRC_PLACEHOLDER__", src_html).replace("__SRC_COUNT__", str(len(trip.get("sources", []))))
+        # 导入路线面板（KML/GPX + 高德导入说明 + 每日 URI）
+        import_html = []
+        EXP = os.path.join(SITE_DIR, "export")
+        if os.path.isdir(EXP):
+            for fn in sorted(os.listdir(EXP)):
+                if fn.endswith((".kml", ".gpx")):
+                    size = os.path.getsize(os.path.join(EXP, fn)) // 1024
+                    kind = "KML（高德收藏导入 / Google 地球）" if fn.endswith(".kml") else "GPX（两步路/六只脚/运动软件）"
+                    import_html.append(f"<a class='nav' style='margin:4px 8px 4px 0' href='export/{fn}' download>⬇️ {fn}（{size}KB）</a><span style='color:#8895a5;font-size:12px'>{kind}</span><br>")
+        per_day = []
+        for d in sorted(itinerary):
+            pts = []
+            for it in itinerary[d].get("items", []):
+                p = by_id.get(it.get("poiId"))
+                if p and p.get("lat"):
+                    pts.append(p)
+            if len(pts) >= 2:
+                a, b = pts[0], pts[-1]
+                uri = f"https://uri.amap.com/navigation?from={a['lng']},{a['lat']}&to={b['lng']},{b['lat']}&mode=car&callnative=1"
+                qr = f"https://api.qrserver.com/v1/create-qr-code/?size=140x140&data={urllib.parse.quote(uri, safe='')}"
+                per_day.append(f"<li><b>Day{d}</b> {esc(a['name'])} → {esc(b['name'])}：<a href='{uri}' target='_blank'>打开/唤起高德路线</a> <img src='{qr}' width='80' style='vertical-align:middle' alt='QR'/></li>")
+        import_html.append("<h3>高德 App 导入 KML（把路线图存进高德）</h3>")
+        import_html.append("<ol class='poilist'><li>下载上面的 <b>.kml</b> 文件（手机浏览器下载）</li><li>打开高德地图 App → 我的 → 收藏 → 右上角「导入」→ 选择该 KML</li><li>导入后行程点与每日路线会出现在收藏/足迹里，可直接规划导航</li></ol>")
+        import_html.append("<p style='color:#8895a5'>提示：坐标来自高德（GCJ-02），导入高德 App 无偏移；若导入 Google 地球等 WGS84 工具会有系统偏差，属正常。高德不支持把行程直接写入手写收藏，故用 KML 中转。</p>")
+        import_html.append("<h3>每日整体路线（起点→终点）</h3><ol class='poilist'>" + "".join(per_day) + "</ol>")
+        html = html.replace("__IMPORT_PLACEHOLDER__", "".join(import_html))
         with open(os.path.join(SITE_DIR, "index.html"), "w", encoding="utf-8") as f:
             f.write(html)
         print("站点已生成:", os.path.join(SITE_DIR, "index.html"))
