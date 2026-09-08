@@ -23,7 +23,7 @@
    "posts": 79
   },
   "generatedAt": "2026-09-08",
-  "status": "调研进行中：79篇小红书已采集，5个B站视频转写中，攻略最终版待转写完成后合并"
+  "status": "调研完成：16视频+79小红书，B站要点已合并(3/5)，行程按视频验证重构"
  },
  "sources": [
   {
@@ -1380,26 +1380,124 @@
   {
    "id": "p01",
    "category": "景点",
-   "name": "鼓浪屿",
-   "address": "厦门市思明区",
+   "name": "鼓浪屿（全岛）",
+   "address": "厦门市思明区鼓浪屿",
    "lng": 118.066102,
    "lat": 24.446214,
-   "day": 1,
-   "slot": "上午",
-   "durationMin": 240,
+   "day": 3,
+   "slot": "全日",
+   "durationMin": 600,
    "bookingRequired": true,
-   "bookingNote": "需在「厦门轮渡」小程序购船票",
-   "ticketPrice": "船票约35元起",
-   "openHours": "轮渡 7:10-18:30 左右",
+   "bookingNote": "东渡邮轮码头→三丘田/内厝澳，船票提前10天放票",
+   "ticketPrice": "船票35元(普通)/80元(豪华)，回程免费",
+   "openHours": "轮渡 7:00-18:30 左右",
    "tags": [
     "世界遗产",
     "万国建筑",
-    "钢琴"
+    "琴岛"
    ],
-   "notes": "早班船人少体验好",
+   "notes": "主码头东渡；船票小程序购；不要信路边拉客",
    "sourceIds": [
     "v01",
-    "v07"
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p16",
+   "category": "景点",
+   "name": "日光岩",
+   "address": "鼓浪屿",
+   "lng": "118.067310",
+   "lat": "24.442228",
+   "day": 3,
+   "slot": "上午",
+   "durationMin": 90,
+   "bookingRequired": false,
+   "ticketPrice": "单买50元/联票含",
+   "openHours": "8:00-17:30",
+   "tags": [
+    "登顶",
+    "俯瞰全岛"
+   ],
+   "notes": "节假日排队严重，建议早去或傍晚",
+   "sourceIds": [
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p17",
+   "category": "景点",
+   "name": "菽庄花园+钢琴博物馆",
+   "address": "鼓浪屿",
+   "lng": "118.069520",
+   "lat": "24.439035",
+   "day": 3,
+   "slot": "上午",
+   "durationMin": 120,
+   "bookingRequired": false,
+   "ticketPrice": "单买30元/联票含",
+   "openHours": "8:00-17:30",
+   "tags": [
+    "园林",
+    "钢琴"
+   ],
+   "notes": "钢琴博物馆有免费演奏，卡好时间",
+   "sourceIds": [
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p18",
+   "category": "景点",
+   "name": "八卦楼（风琴博物馆）",
+   "address": "鼓浪屿",
+   "lng": "118.068263",
+   "lat": "24.447422",
+   "day": 3,
+   "slot": "下午",
+   "durationMin": 90,
+   "bookingRequired": true,
+   "bookingNote": "需在鼓浪屿核心景点小程序预约场次",
+   "ticketPrice": "联票含/单约免费",
+   "openHours": "8:30-17:30",
+   "tags": [
+    "管风琴",
+    "红顶"
+   ],
+   "notes": "每天有管风琴演奏；有免费讲解",
+   "sourceIds": [
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p20",
+   "category": "海边",
+   "name": "大德记沙滩+皓月园",
+   "address": "鼓浪屿东南",
+   "lng": "118.075936",
+   "lat": "24.441099",
+   "day": 3,
+   "slot": "傍晚",
+   "durationMin": 120,
+   "bookingRequired": false,
+   "ticketPrice": "免费(皓月园门票另计)",
+   "openHours": "全天",
+   "tags": [
+    "日落",
+    "郑成功像",
+    "双子塔同框"
+   ],
+   "notes": "退潮礁石注意防滑",
+   "sourceIds": [
+    "v01",
+    "v03"
    ],
    "checked": true
   },
@@ -1411,43 +1509,92 @@
    "lng": 118.081903,
    "lat": 24.454104,
    "day": 1,
-   "slot": "傍晚",
-   "durationMin": 150,
+   "slot": "上午",
+   "durationMin": 120,
    "bookingRequired": false,
    "ticketPrice": "免费",
    "openHours": "全天",
    "tags": [
     "骑楼",
-    "小吃",
-    "夜景"
+    "步行街"
    ],
-   "notes": "小吃与伴手礼集中地",
+   "notes": "老虎城四楼天台可拍全景(10元)；中华城免费",
    "sourceIds": [
-    "v01"
+    "v01",
+    "v03"
    ],
    "checked": true
   },
   {
-   "id": "p03",
-   "category": "街区",
-   "name": "沙坡尾艺术西区",
-   "address": "厦门市思明区大学路",
-   "lng": 118.087587,
-   "lat": 24.437609,
+   "id": "p11",
+   "category": "市集",
+   "name": "厦门八市（营平菜市场）",
+   "address": "厦门市思明区营平路",
+   "lng": 118.075017,
+   "lat": 24.457902,
    "day": 1,
-   "slot": "晚上",
+   "slot": "上午",
+   "durationMin": 90,
+   "bookingRequired": false,
+   "ticketPrice": "免费",
+   "openHours": "全天",
+   "tags": [
+    "水产市场",
+    "小吃"
+   ],
+   "notes": "看热闹为主，海鲜加工慎重；阿杰五香等小吃在此",
+   "sourceIds": [
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p08",
+   "category": "景区",
+   "name": "集美学村",
+   "address": "厦门市集美区",
+   "lng": 118.103353,
+   "lat": 24.572373,
+   "day": 1,
+   "slot": "下午",
+   "durationMin": 240,
+   "bookingRequired": false,
+   "ticketPrice": "免费",
+   "openHours": "全天",
+   "tags": [
+    "嘉庚建筑",
+    "海上地铁"
+   ],
+   "notes": "地铁1号线直达；龙舟池/鳌园/嘉庚故居/大社戏台",
+   "sourceIds": [
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p15",
+   "category": "观景",
+   "name": "十里长堤（集美）",
+   "address": "厦门市集美区",
+   "lng": 118.089475,
+   "lat": 24.563722,
+   "day": 1,
+   "slot": "傍晚",
    "durationMin": 120,
    "bookingRequired": false,
    "ticketPrice": "免费",
-   "openHours": "全天，店铺约10:00-22:00",
+   "openHours": "全天",
    "tags": [
-    "文艺",
-    "老渔港",
-    "灯光秀"
+    "日落",
+    "夜市",
+    "乐队"
    ],
-   "notes": "周五六晚有灯光秀",
+   "notes": "地铁穿海+日落+不定期免费演出",
    "sourceIds": [
-    "v03"
+    "v01",
+    "xhs_695b6c51000000001a02654d"
    ],
    "checked": true
   },
@@ -1466,11 +1613,11 @@
    "openHours": "6:30-18:00",
    "tags": [
     "雨林世界",
-    "喷雾",
-    "多肉区"
+    "多肉"
    ],
-   "notes": "雨林喷雾约 8:00-9:30 / 15:00-16:30",
+   "notes": "西门进+观光车；雨林喷雾8:00-9:30/15:00-16:30",
    "sourceIds": [
+    "v01",
     "v03"
    ],
    "checked": true
@@ -1485,16 +1632,65 @@
    "day": 2,
    "slot": "上午",
    "durationMin": 90,
-   "bookingRequired": false,
+   "bookingRequired": true,
+   "bookingNote": "访客需预约",
    "ticketPrice": "免费",
    "openHours": "8:00-17:00",
    "tags": [
     "闽南佛教",
     "素饼"
    ],
-   "notes": "与厦大相邻",
+   "notes": "东门进长津阁石阶20分钟到免费观景台；西门出接猫街",
    "sourceIds": [
-    "v04"
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p14",
+   "category": "街区",
+   "name": "顶澳仔猫街",
+   "address": "厦门市思明区顶澳仔路",
+   "lng": 118.091662,
+   "lat": 24.440171,
+   "day": 2,
+   "slot": "上午",
+   "durationMin": 60,
+   "bookingRequired": false,
+   "ticketPrice": "免费",
+   "openHours": "全天",
+   "tags": [
+    "猫咪涂鸦",
+    "拍照"
+   ],
+   "notes": "无真猫，涂鸦打卡地",
+   "sourceIds": [
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p03",
+   "category": "街区",
+   "name": "沙坡尾艺术西区",
+   "address": "厦门市思明区大学路",
+   "lng": 118.087587,
+   "lat": 24.437609,
+   "day": 2,
+   "slot": "中午",
+   "durationMin": 120,
+   "bookingRequired": false,
+   "ticketPrice": "免费",
+   "openHours": "全天",
+   "tags": [
+    "文艺",
+    "老渔港"
+   ],
+   "notes": "彩虹墙在艺术西区2楼天台；拍照为主",
+   "sourceIds": [
+    "v01",
+    "v03"
    ],
    "checked": true
   },
@@ -1515,7 +1711,31 @@
     "沙滩",
     "日落"
    ],
-   "notes": "紧邻厦门大学",
+   "notes": "日落分神级；人较多",
+   "sourceIds": [
+    "v01",
+    "v03"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p13",
+   "category": "桥梁",
+   "name": "演武大桥观景台",
+   "address": "厦门市思明区环岛南路",
+   "lng": 118.087789,
+   "lat": 24.435421,
+   "day": 2,
+   "slot": "下午",
+   "durationMin": 60,
+   "bookingRequired": false,
+   "ticketPrice": "免费",
+   "openHours": "全天",
+   "tags": [
+    "海景",
+    "双子塔机位"
+   ],
+   "notes": "拍世茂双子塔经典机位",
    "sourceIds": [
     "v03"
    ],
@@ -1524,97 +1744,95 @@
   {
    "id": "p07",
    "category": "道路",
-   "name": "环岛路",
+   "name": "环岛路（白城→黄厝）",
    "address": "厦门市思明区环岛路",
    "lng": 118.142325,
    "lat": 24.431453,
    "day": 2,
    "slot": "下午",
-   "durationMin": 120,
-   "bookingRequired": false,
-   "ticketPrice": "免费",
-   "openHours": "全天",
-   "tags": [
-    "骑行",
-    "海景",
-    "椰风"
-   ],
-   "notes": "可骑行，注意防晒",
-   "sourceIds": [
-    "v03",
-    "v07"
-   ],
-   "checked": true
-  },
-  {
-   "id": "p08",
-   "category": "景区",
-   "name": "集美学村",
-   "address": "厦门市集美区",
-   "lng": 118.103353,
-   "lat": 24.572373,
-   "day": 3,
-   "slot": "上午",
    "durationMin": 180,
    "bookingRequired": false,
    "ticketPrice": "免费",
    "openHours": "全天",
    "tags": [
-    "嘉庚建筑",
-    "海上地铁",
-    "鳌园"
+    "骑行",
+    "海景"
    ],
-   "notes": "地铁1号线高崎→集美学村站海景段",
+   "notes": "可29路公交1元走全程；黄厝日出/日落均可",
    "sourceIds": [
+    "v01",
     "v03"
    ],
    "checked": true
   },
   {
-   "id": "p09",
-   "category": "街区",
-   "name": "曾厝垵",
-   "address": "厦门市思明区曾厝垵",
-   "lng": 118.063212,
-   "lat": 24.447955,
-   "day": 3,
-   "slot": "中午",
-   "durationMin": 120,
-   "bookingRequired": false,
-   "ticketPrice": "免费",
-   "openHours": "全天",
-   "tags": [
-    "文创村",
-    "小吃",
-    "民宿"
-   ],
-   "notes": "游客较多，可选择性打卡",
-   "sourceIds": [
-    "v01"
-   ],
-   "checked": true
-  },
-  {
    "id": "p10",
-   "category": "观景",
+   "category": "海滩",
    "name": "黄厝海滩",
    "address": "厦门市思明区环岛南路",
    "lng": 118.228083,
    "lat": 24.64782,
    "day": 2,
-   "slot": "傍晚（日落/日出）",
+   "slot": "傍晚",
    "durationMin": 90,
    "bookingRequired": false,
    "ticketPrice": "免费",
    "openHours": "全天",
    "tags": [
-    "日出",
-    "人少",
-    "野沙滩感"
+    "日落",
+    "人少"
    ],
-   "notes": "日出观赏TOP1候选",
+   "notes": "看日落最佳；附近海边咖啡馆多",
    "sourceIds": [
+    "v01",
     "v04"
+   ],
+   "checked": true
+  },
+  {
+   "id": "p12",
+   "category": "公园",
+   "name": "厦门铁路文化公园",
+   "address": "厦门市思明区",
+   "lng": 118.102223,
+   "lat": 24.460383,
+   "day": 2,
+   "slot": "机动",
+   "durationMin": 90,
+   "bookingRequired": false,
+   "ticketPrice": "免费",
+   "openHours": "全天",
+   "tags": [
+    "老铁路",
+    "免费"
+   ],
+   "notes": "可选：大生里段穿鸿山隧道；时间紧可跳过",
+   "sourceIds": [
+    "v01"
+   ],
+   "checked": false
+  },
+  {
+   "id": "p21",
+   "category": "交通",
+   "name": "东渡邮轮码头",
+   "address": "厦门市思明区东渡路",
+   "lng": 118.077007,
+   "lat": 24.49397,
+   "day": 3,
+   "slot": "07:30出发",
+   "durationMin": 60,
+   "bookingRequired": true,
+   "bookingNote": "去鼓浪屿主码头上船点",
+   "ticketPrice": "—",
+   "openHours": "随班次",
+   "tags": [
+    "船票",
+    "码头"
+   ],
+   "notes": "提前到码头取票/刷码",
+   "sourceIds": [
+    "v03"
    ],
    "checked": true
   }
@@ -1792,75 +2010,124 @@
    "sourceIds": [
     "xhs_695b6c51000000001a02654d"
    ]
+  },
+  {
+   "id": "e07",
+   "name": "帆船出海",
+   "where": "五缘湾帆船港",
+   "durationMin": 90,
+   "price": "约120-200元/人（示例）",
+   "bookingRequired": true,
+   "bookingLink": "平台购票",
+   "bestFor": "喜欢海的朋友",
+   "sourceIds": [
+    "v03"
+   ]
+  },
+  {
+   "id": "e08",
+   "name": "赶海挖沙",
+   "where": "观音山沙滩",
+   "durationMin": 120,
+   "price": "免费（查好潮汐表）",
+   "bookingRequired": false,
+   "bestFor": "亲子",
+   "sourceIds": [
+    "v03"
+   ]
+  },
+  {
+   "id": "e09",
+   "name": "山海健康步道临海线",
+   "where": "第18出入口→盼归塔（速通：云山天际酒店旁24口电梯）",
+   "durationMin": 150,
+   "price": "免费",
+   "bookingRequired": false,
+   "bestFor": "徒步爱好者",
+   "sourceIds": [
+    "v03"
+   ]
+  },
+  {
+   "id": "e10",
+   "name": "集美海上自行车道",
+   "where": "集美学村·海上自行车道（2.6km）",
+   "durationMin": 30,
+   "price": "骑行约10-20元",
+   "bookingRequired": false,
+   "bestFor": "骑行",
+   "sourceIds": [
+    "v03"
+   ]
   }
  ],
  "itinerary": [
   {
    "day": 1,
    "date": "2026-09-18",
-   "theme": "老城人文：鼓浪屿→中山路→沙坡尾",
-   "area": "思明老城区",
+   "theme": "老城烟火+集美学村（1号线沿线）",
+   "area": "中山路/八市/集美",
    "items": [
     {
-     "poiId": "p01",
-     "time": "08:30-12:30"
+     "poiId": "p02",
+     "time": "09:00-11:00"
+    },
+    {
+     "poiId": "p11",
+     "time": "11:00-12:30"
     },
     {
      "poiId": "r01",
      "time": "12:30-13:30"
     },
     {
-     "poiId": "p02",
-     "time": "17:00-19:00"
+     "poiId": "p08",
+     "time": "14:00-17:30"
     },
     {
-     "poiId": "r04",
-     "time": "19:00-19:40"
-    },
-    {
-     "poiId": "p03",
-     "time": "19:45-21:30"
+     "poiId": "p15",
+     "time": "17:30-19:00"
     }
    ],
    "dailyRoute": {
-    "mode": "walking+driving",
+    "mode": "地铁1号线+步行",
     "polylines": [],
-    "distanceKm": 16.27,
-    "durationMin": 79.2,
-    "note": "路线占位，调研后由高德 direction API 填充",
+    "distanceKm": 23.7,
+    "durationMin": 62.5,
+    "note": "1号线串联：中山路→集美学村",
     "legs": [
      {
-      "from": "p01",
+      "from": "p02",
+      "to": "p11",
+      "distanceKm": 1.67,
+      "durationMin": 12.8
+     },
+     {
+      "from": "p11",
       "to": "r01",
-      "distanceKm": 8.65,
-      "durationMin": 51.0
+      "distanceKm": 2.1,
+      "durationMin": 9.7
      },
      {
       "from": "r01",
-      "to": "p02",
-      "distanceKm": 2.34,
-      "durationMin": 11.5
+      "to": "p08",
+      "distanceKm": 16.74,
+      "durationMin": 28.0
      },
      {
-      "from": "p02",
-      "to": "r04",
-      "distanceKm": 0.58,
-      "durationMin": 3.3
-     },
-     {
-      "from": "r04",
-      "to": "p03",
-      "distanceKm": 4.69,
-      "durationMin": 13.3
+      "from": "p08",
+      "to": "p15",
+      "distanceKm": 3.2,
+      "durationMin": 11.8
      }
     ]
    },
-   "notes": "鼓浪屿船票提前订；晚餐后可逛中山路夜景"
+   "notes": "八市看热闹别乱买海鲜；集美学村值得慢逛"
   },
   {
    "day": 2,
    "date": "2026-09-19",
-   "theme": "山海风光：植物园→厦大→环岛路→黄厝",
+   "theme": "山海环岛：植物园→厦大→环岛路",
    "area": "思明东南",
    "items": [
     {
@@ -1872,104 +2139,155 @@
      "time": "11:30-13:00"
     },
     {
-     "poiId": "r02",
-     "time": "13:00-14:00"
+     "poiId": "p14",
+     "time": "13:00-13:40"
+    },
+    {
+     "poiId": "p03",
+     "time": "13:40-14:40"
     },
     {
      "poiId": "p06",
-     "time": "14:30-16:00"
+     "time": "15:00-16:00"
+    },
+    {
+     "poiId": "p13",
+     "time": "16:00-17:00"
     },
     {
      "poiId": "p07",
-     "time": "16:00-18:00"
+     "time": "17:00-18:30"
     },
     {
      "poiId": "p10",
-     "time": "18:00-19:00"
+     "time": "18:30-19:30"
     }
    ],
    "dailyRoute": {
     "mode": "driving",
     "polylines": [],
-    "distanceKm": 51.68,
-    "durationMin": 91.6,
-    "note": "路线占位",
+    "distanceKm": 55.17,
+    "durationMin": 107.5,
+    "note": "可29路公交串联",
     "legs": [
      {
       "from": "p04",
       "to": "p05",
       "distanceKm": 2.76,
-      "durationMin": 23.6
+      "durationMin": 23.7
      },
      {
       "from": "p05",
-      "to": "r02",
-      "distanceKm": 5.45,
-      "durationMin": 12.5
+      "to": "p14",
+      "distanceKm": 4.46,
+      "durationMin": 14.1
      },
      {
-      "from": "r02",
+      "from": "p14",
+      "to": "p03",
+      "distanceKm": 1.27,
+      "durationMin": 6.8
+     },
+     {
+      "from": "p03",
       "to": "p06",
-      "distanceKm": 7.63,
-      "durationMin": 12.4
+      "distanceKm": 2.42,
+      "durationMin": 6.9
      },
      {
       "from": "p06",
+      "to": "p13",
+      "distanceKm": 4.4,
+      "durationMin": 7.8
+     },
+     {
+      "from": "p13",
       "to": "p07",
-      "distanceKm": 5.11,
-      "durationMin": 9.4
+      "distanceKm": 9.14,
+      "durationMin": 14.3
      },
      {
       "from": "p07",
       "to": "p10",
       "distanceKm": 30.73,
-      "durationMin": 33.6
+      "durationMin": 33.8
      }
     ]
    },
-   "notes": "植物园雨林喷雾在上午；黄厝适合看日落"
+   "notes": "植物园西门进；南普陀需预约；沙坡尾拍照打卡"
   },
   {
    "day": 3,
    "date": "2026-09-20",
-   "theme": "闽南人文：集美学村→曾厝垵→返程",
-   "area": "集美+思明",
+   "theme": "鼓浪屿全日：码头→三大片区",
+   "area": "鼓浪屿",
    "items": [
     {
-     "poiId": "p08",
-     "time": "09:00-12:00"
+     "poiId": "p21",
+     "time": "07:30-08:30"
     },
     {
-     "poiId": "r03",
-     "time": "12:00-13:30"
+     "poiId": "p16",
+     "time": "09:30-11:00"
     },
     {
-     "poiId": "p09",
-     "time": "14:00-16:00"
+     "poiId": "p17",
+     "time": "11:00-12:30"
+    },
+    {
+     "poiId": "p01",
+     "time": "12:30-13:30",
+     "label": "龙头路小吃街午餐"
+    },
+    {
+     "poiId": "p18",
+     "time": "13:30-15:00"
+    },
+    {
+     "poiId": "p20",
+     "time": "16:00-17:30"
     }
    ],
    "dailyRoute": {
-    "mode": "driving",
+    "mode": "步行",
     "polylines": [],
-    "distanceKm": 31.5,
-    "durationMin": 73.5,
-    "note": "路线占位",
+    "distanceKm": 13.75,
+    "durationMin": 118.7,
+    "note": "岛上不通车",
     "legs": [
      {
-      "from": "p08",
-      "to": "r03",
-      "distanceKm": 21.55,
-      "durationMin": 29.9
+      "from": "p21",
+      "to": "p16",
+      "distanceKm": 8.59,
+      "durationMin": 42.5
      },
      {
-      "from": "r03",
-      "to": "p09",
-      "distanceKm": 9.95,
-      "durationMin": 43.6
+      "from": "p16",
+      "to": "p17",
+      "distanceKm": 1.48,
+      "durationMin": 21.9
+     },
+     {
+      "from": "p17",
+      "to": "p01",
+      "distanceKm": 1.54,
+      "durationMin": 26.4
+     },
+     {
+      "from": "p01",
+      "to": "p18",
+      "distanceKm": 0.62,
+      "durationMin": 10.4
+     },
+     {
+      "from": "p18",
+      "to": "p20",
+      "distanceKm": 1.52,
+      "durationMin": 17.4
      }
     ]
    },
-   "notes": "返程航班/动车预留时间"
+   "notes": "船票提前10天买；日光岩早去；八卦楼需预约场次"
   }
  ],
  "tips": {
@@ -2001,12 +2319,35 @@
     "item": "朱富贵海鲜火锅",
     "how": "热门需提前预约，11点开始排队",
     "deadline": "提前1天"
+   },
+   {
+    "item": "鼓浪屿船票",
+    "how": "微信小程序（提前10天放票，节假日必须提前）；普通35元/豪华80元，回程免费",
+    "deadline": "提前10天"
+   },
+   {
+    "item": "厦门大学",
+    "how": "南门访客中心预约（群贤楼群→芙蓉隧道路线）",
+    "deadline": "提前1-3天"
+   },
+   {
+    "item": "日光岩/菽庄/八卦楼",
+    "how": "可单独购票或买联票更划算；八卦楼需预约场次",
+    "deadline": "当天"
    }
   ],
   "transportSchedules": [
    {
-    "line": "厦门高崎机场→市区",
-    "note": "BRT快1线约35分钟/5元；打车约30-40分钟"
+    "line": "机场→市区",
+    "note": "公交机场专线1元/机场巴士；或BRT全程高架无红绿灯，超快"
+   },
+   {
+    "line": "厦门北站→岛内",
+    "note": "地铁1号线直达，转集美学村同线"
+   },
+   {
+    "line": "环岛路海岸线",
+    "note": "29路公交1元，完整走完海岸线"
    },
    {
     "line": "上海→厦门",

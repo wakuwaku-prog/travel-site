@@ -42,8 +42,8 @@ def fill_trip(trip, out_path):
         total_t = 0
         for i in range(len(seq) - 1):
             a, b = seq[i], seq[i + 1]
-            o = f"{a['lng']:.6f},{a['lat']:.6f}"
-            d = f"{b['lng']:.6f},{b['lat']:.6f}"
+            o = f"{float(a['lng']):.6f},{float(a['lat']):.6f}"
+            d = f"{float(b['lng']):.6f},{float(b['lat']):.6f}"
             try:
                 res = call_driving(o, d)
                 if res.get("status") == "1":
