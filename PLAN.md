@@ -258,6 +258,7 @@ travel-site/
 
 ### ✅ 已完成
 
+- **🟢 已上线**：独立仓库 `wakuwaku-prog/travel-site` + GitHub Pages **https://wakuwaku-prog.github.io/travel-site/**（2026-09-08，HTTP 200，7 栏目 + 高德路线 + 105 条来源，浏览器验收通过）
 - **参数收集**：厦门 · 3天（2026-09-18~20 示例日期）· 上海出发 · 2人 · 舒适 · 自然风光/人文/美食/海岛 · 均衡节奏
 - **M0 部分**：高德 Key 已验证可用（geocode + place/text + driving direction 全部 OK）
 - **M1 部分**：B站调研种子已落盘 `data/research/bilibili_seed.json`（16 个不重复视频，去重按播放量排序）；高德 POI 坐标批量补齐 `data/research/xiamen_pois_raw.json`（12 个点）
