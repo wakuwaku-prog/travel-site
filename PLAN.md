@@ -134,7 +134,7 @@ travel-site/
 
 | # | 配置项 | 用途 | 获取/操作 |
 |---|---|---|---|
-| 1 | **高德开放平台 Key**（Web 服务 + JS API 各一，或按服务分别申请） | geocode/POI/路径规划/前端地图 | https://lbs.amap.com 注册 → 控制台创建 Key；JS API 需填**安全域名**（本地可填 `localhost`，部署后填 Pages 域名） |
+| 1 | **高德开放平台 Key**（Web 服务 + JS API 各一，或按服务分别申请） | geocode/POI/路径规划/前端地图 | 官方创建教程「创建项目与 Key」：https://lbs.amap.com/api/mcp-server/create-project-and-key （也可 https://lbs.amap.com 直接注册 → 控制台创建）；JS API 需填**安全域名**（本地可填 `localhost`，部署后填 Pages 域名） |
 | 2 | **OpenCLI + Chrome 扩展** | 小红书调研（agent-reach 的小红书走 OpenCLI/浏览器登录态最稳） | 装 `@jackwener/opencli`（`npm i -g`），Chrome 装扩展；或 `agent-reach configure xhs-cookies` |
 | 3 | **AI-Douyin API Key / TikHub Token** | 抖音、小红书视频解析下载（字幕 skill 依赖） | https://ai-douyin.top9.cc 注册领额度；或 https://tikhub.io 申请 Token |
 | 4 | **和风天气 Key**（可选） | 天气与穿衣提醒栏目 | https://dev.qweather.com 免费注册 |

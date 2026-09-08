@@ -16,4 +16,4 @@
 `python scripts/amap/export_routes.py data/trips/trip-xiamen-2026-09-18.json` 与
 `python scripts/build_site.py` → push 触发 GitHub Actions 自动发布。
 
-> 注意：`.env`（高德 Key）不入库；重新 clone 后需自行配置。
+> 注意：`.env`（高德 Key）不入库；重新 clone 后需自行配置。获取高德 Key 的官方教程（创建项目与 Key）：https://lbs.amap.com/api/mcp-server/create-project-and-key
