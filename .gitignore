@@ -1,0 +1,9 @@
+# travel-site 独立仓库的忽略规则
+.env
+config.json
+data/raw/audio/
+data/raw/subtitles/
+data/raw/xhs_notes/
+*.mp3
+*.m4a
+__pycache__/
